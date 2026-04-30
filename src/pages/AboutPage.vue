@@ -25,7 +25,7 @@ const skills = [
           <p>
             i'm a photographer based in Burundi. I'm a self-taught photographer and I'm passionate about photography. i like to see beautiful visuals and i like to capture them.        </p>
           <p>
-            My journey began with a little question, "a girl can really be a photographer? how can she be a photographer reader in the events?" so i decided to start my journey as a photographer and i'm so glad i did.
+            My journey began with a little question, "a girl can really be a photographer? how can she be a photograph reader in the events?" so i decided to start my journey as a photographer and i'm so glad i did.
           </p>
         </div>
 

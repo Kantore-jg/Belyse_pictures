@@ -1,7 +1,8 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import { Menu, X, Camera, Instagram, Twitter, Mail, MessageCircle } from 'lucide-vue-next'
+import { Menu, X, Camera, Instagram, Twitter, Mail } from 'lucide-vue-next'
+import WhatsAppIcon from '../components/WhatsAppIcon.vue'
 
 const isMenuOpen = ref(false)
 const route = useRoute()
@@ -100,7 +101,7 @@ const whatsappUrl = 'https://wa.me/72429849?text=Bonjour%2C%20je%20souhaite%20r%
           <RouterLink to="/admin" class="small-caps hover:opacity-100 transition-opacity">Admin</RouterLink>
           <div class="flex gap-4 items-center">
             <a :href="whatsappUrl" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-              <MessageCircle class="w-5 h-5 text-green-500 opacity-80 hover:opacity-100 cursor-pointer" />
+              <WhatsAppIcon :size="20" class="text-green-500 opacity-80 hover:opacity-100 cursor-pointer" />
             </a>
             <Mail class="w-5 h-5 opacity-60 hover:opacity-100 cursor-pointer" />
           </div>
@@ -120,7 +121,7 @@ const whatsappUrl = 'https://wa.me/72429849?text=Bonjour%2C%20je%20souhaite%20r%
       class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
       title="Contactez-nous sur WhatsApp"
     >
-      <MessageCircle class="w-7 h-7" />
+      <WhatsAppIcon :size="28" />
     </a>
 
     <footer class="px-6 py-12 border-t border-white/5 space-y-8">

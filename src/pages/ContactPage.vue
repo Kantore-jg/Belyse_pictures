@@ -1,7 +1,8 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { messageService } from '../services/api'
-import { Send, Mail, Phone, MapPin, Instagram, Twitter, MessageCircle } from 'lucide-vue-next'
+import { Send, Mail, Phone, MapPin, Instagram, Twitter } from 'lucide-vue-next'
+import WhatsAppIcon from '../components/WhatsAppIcon.vue'
 
 const formData = reactive({
   name: '',
@@ -57,7 +58,7 @@ const handleSubmit = async () => {
 
             <div class="flex items-start gap-6">
               <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center shrink-0">
-                <MessageCircle class="w-5 h-5 text-green-500" />
+                <WhatsAppIcon :size="20" class="text-green-500" />
               </div>
               <div class="space-y-1">
                 <h4 class="small-caps">WhatsApp</h4>
@@ -82,7 +83,7 @@ const handleSubmit = async () => {
             <h4 class="small-caps">Follow My Journey</h4>
             <div class="flex gap-4">
               <a :href="whatsappUrl" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-green-500 hover:text-white hover:border-green-500 transition-all">
-                <MessageCircle class="w-6 h-6" />
+                <WhatsAppIcon :size="24" />
               </a>
               <a href="#" class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
                 <Instagram class="w-6 h-6" />

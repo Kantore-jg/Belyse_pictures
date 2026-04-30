@@ -15,6 +15,16 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif font-normal;
   }
+
+  select {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #e5e5e5;
+  }
+
+  select option {
+    background-color: #171717;
+    color: #e5e5e5;
+  }
 }
 
 @layer utilities {

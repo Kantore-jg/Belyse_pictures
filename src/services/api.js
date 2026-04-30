@@ -14,6 +14,17 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+    }
+    return Promise.reject(error);
+  }
+);
+
 export const authService = {
   login: async (email, password) => {
     const response = await api.post('/auth/login', { email, password });
@@ -45,6 +56,10 @@ export const photoService = {
     });
     return response.data;
   },
+  updatePhoto: async (id, data) => {
+    const response = await api.put(`/photos/${id}`, data);
+    return response.data;
+  },
   deletePhoto: async (id) => {
     await api.delete(`/photos/${id}`);
   },
@@ -55,8 +70,16 @@ export const eventService = {
     const response = await api.get('/events');
     return response.data;
   },
-  createEvent: async (event) => {
-    const response = await api.post('/events', event);
+  createEvent: async (formData) => {
+    const response = await api.post('/events', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+    return response.data;
+  },
+  updateEvent: async (id, formData) => {
+    const response = await api.post(`/events/${id}`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
     return response.data;
   },
   deleteEvent: async (id) => {
@@ -73,8 +96,10 @@ export const bookingService = {
     const response = await api.post('/bookings', booking);
     return response.data;
   },
-  updateBookingStatus: async (id, status) => {
-    const response = await api.patch(`/bookings/${id}`, { status });
+  updateBookingStatus: async (id, status, adminResponse = null) => {
+    const payload = { status };
+    if (adminResponse) payload.adminResponse = adminResponse;
+    const response = await api.patch(`/bookings/${id}`, payload);
     return response.data;
   },
 };

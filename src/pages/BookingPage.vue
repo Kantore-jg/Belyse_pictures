@@ -155,7 +155,7 @@ const handleSubmit = async () => {
           </div>
 
           <div class="space-y-2">
-            <label class="small-caps opacity-40 block">Tell me about your project</label>
+            <label class="small-caps opacity-40 block">Tell me about your event</label>
             <textarea
               required
               rows="4"

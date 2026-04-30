@@ -57,7 +57,15 @@ onMounted(async () => {
             </a>
           </div>
 
-          <div class="grid grid-cols-2 gap-4">
+          <div v-if="event.coverImage" class="relative overflow-hidden rounded-xl aspect-[4/5]">
+            <img
+              :src="event.coverImage"
+              :alt="event.title"
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-110"
+              referrerpolicy="no-referrer"
+            />
+          </div>
+          <div v-else-if="event.photos?.length" class="grid grid-cols-2 gap-4">
             <div
               v-for="(url, idx) in event.photos.slice(0, 4)"
               :key="idx"
