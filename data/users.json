@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "email": "admin@belysepicture.com",
+      "password": "$2a$10$XmB6.t.Y/A.O2f9B9S6jHeS.G/8P6L0O1J/W3U.f/Zl7D.nK9G5mK" 
+    }
+  ]
+}
