@@ -23,7 +23,15 @@ const handleLogin = async () => {
     await authService.login(email.value, password.value)
     router.push('/admin/dashboard')
   } catch (err) {
-    error.value = 'Invalid email or password'
+    const status = err?.response?.status
+
+    if (status === 401 || status === 422) {
+      error.value = 'Invalid email or password'
+    } else if (!err?.response) {
+      error.value = 'Unable to reach server. Please check API URL/CORS.'
+    } else {
+      error.value = `Server error (${status}). Please try again.`
+    }
   } finally {
     loading.value = false
   }
