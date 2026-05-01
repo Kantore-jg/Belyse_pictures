@@ -53,7 +53,7 @@ const handleLogin = async () => {
             type="email"
             v-model="email"
             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-white transition-colors"
-            placeholder="admin@belysepicture.com"
+            placeholder="email"
           />  
         </div>
 
@@ -80,7 +80,7 @@ const handleLogin = async () => {
           <span v-else>Login</span>
         </button>
       </form>
-      <p class="text-xs text-center text-neutral-500 italic">Demo hint: admin@belysepicture.com / admin123</p>
+      <p class="text-xs text-center text-neutral-500 italic">Bely_Pictures</p>
     </div>
   </div>
 </template>
