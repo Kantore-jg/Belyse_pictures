@@ -4,8 +4,8 @@ import { useRouter } from 'vue-router'
 import { authService } from '../../services/api'
 import { Lock, Mail, Loader2 } from 'lucide-vue-next'
 
-const email = ref('')
-const password = ref('')
+const email = ref('admin@belysepicture.com')
+const password = ref('admin123')
 const loading = ref(false)
 const error = ref('')
 const router = useRouter()
@@ -28,7 +28,7 @@ const handleLogin = async () => {
     if (status === 401 || status === 422) {
       error.value = 'Invalid email or password'
     } else if (!err?.response) {
-      error.value = 'Unable to reach server. Please check API URL/CORS.'
+      error.value = 'Unable to reach server'
     } else {
       error.value = `Server error (${status}). Please try again.`
     }

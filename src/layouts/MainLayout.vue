@@ -43,7 +43,7 @@ const whatsappUrl = 'https://wa.me/72429849?text=Bonjour%2C%20je%20souhaite%20r%
       </RouterLink>
 
       <!-- Desktop navbar -->
-      <nav class="hidden lg:flex items-center gap-1 pointer-events-auto">
+      <nav class="hidden lg:flex items-center bg-black gap-1 pointer-events-auto">
         <RouterLink
           v-for="link in navLinks"
           :key="link.path"
@@ -98,7 +98,7 @@ const whatsappUrl = 'https://wa.me/72429849?text=Bonjour%2C%20je%20souhaite%20r%
         </nav>
 
         <div class="absolute bottom-12 flex gap-8">
-          <RouterLink to="/admin" class="small-caps hover:opacity-100 transition-opacity">Admin</RouterLink>
+          <!-- <RouterLink to="/admin" class="small-caps hover:opacity-100 transition-opacity">Admin</RouterLink> -->
           <div class="flex gap-4 items-center">
             <a :href="whatsappUrl" target="_blank" rel="noopener noreferrer" title="WhatsApp">
               <WhatsAppIcon :size="20" class="text-green-500 opacity-80 hover:opacity-100 cursor-pointer" />
@@ -127,7 +127,7 @@ const whatsappUrl = 'https://wa.me/72429849?text=Bonjour%2C%20je%20souhaite%20r%
     <footer class="px-6 py-12 border-t border-white/5 space-y-8">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
         <div class="space-y-4">
-          <h2 class="text-3xl font-serif">Let's capture beauty</h2>
+          <h2 class="text-3xl font-serif">Let's capture your beauty</h2>
           <RouterLink to="/booking" class="nav-pill inline-block">Book a Session</RouterLink>
         </div>
         <div class="grid grid-cols-2 gap-x-12 gap-y-4">
