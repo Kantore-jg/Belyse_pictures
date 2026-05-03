@@ -56,9 +56,7 @@ export const photoService = {
     return response.data;
   },
   uploadPhotos: async (formData) => {
-    const response = await api.post('/photos', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
+    const response = await api.post('/photos', formData);
     return response.data;
   },
   updatePhoto: async (id, data) => {
@@ -76,15 +74,11 @@ export const eventService = {
     return response.data;
   },
   createEvent: async (formData) => {
-    const response = await api.post('/events', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
+    const response = await api.post('/events', formData);
     return response.data;
   },
   updateEvent: async (id, formData) => {
-    const response = await api.post(`/events/${id}`, formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
+    const response = await api.post(`/events/${id}`, formData);
     return response.data;
   },
   deleteEvent: async (id) => {
